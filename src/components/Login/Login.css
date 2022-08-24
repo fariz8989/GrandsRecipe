@@ -1,0 +1,104 @@
+.login-container{
+    height: 80vh;
+}
+.login-form{
+  @apply w-4/5 flex justify-center flex-col login-container p-8 items-center;
+  background-color: rgba(255, 255, 255, 0.572);
+}
+.input{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.inputContainer{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 3vw;
+    border-radius: 10px;
+    
+    
+}
+.inputContainer h1{
+    color: black!important;
+    font-family: inherit!important;
+}
+.inputBox{
+    position: relative;
+    width: 90%;
+    
+}
+.inputBox input{
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid black;
+    background-color: transparent;
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    font-size: 1em;
+   
+}
+.grid-login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+     background-image: url('./delicious-healthy-asian-food-gray-textured-background-with-copy-space.jpg');
+}
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: black;
+    transition: 0.5s;
+    font-weight: 600;
+}
+.inputBox input:valid ~ span
+,.inputBox input:focus ~ span{
+color: black;
+transform: translateX(10px) translateY(-7px);
+font-size: 0.65em;
+padding: 0 10px;
+background-color: rgb(230, 235, 239);
+border-left: 1px solid black;
+border-right: 1px solid black;
+
+}
+.inputBox:nth-child(2) input:valid ~ span
+,.inputBox:nth-child(2) input:focus ~ span{
+color:rgb(230, 235, 239);
+transform: translateX(10px) translateY(-7px);
+font-size: 0.65em;
+padding: 0 10px;
+background-color: black;
+border: none;
+border-radius: 4px;
+}
+.buttonLogin{
+    border: solid black 1px;
+    width: 90%;
+    color: black;
+    border-radius: 8px;
+    padding: 0.25em;
+    font-weight: bold;
+    font-size: 1.25rem;
+    @apply hover:bg-black transition duration-300 ease-out hover:text-misty;
+}
+
+.login-nav{
+    text-decoration: none;
+    color: black;
+}
+.login-nav:hover{
+    text-decoration: underline;
+    color: black;
+}
