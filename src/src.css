@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.background-pic{
+    background-image: url('./components//HomePage//images//bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+}
+.categories{
+ 
+    @apply bg-slate-50 min-w-5.5rem hover:bg-gray-900 hover:-translate-y-3 hover:border-2 hover:border-gray-700 transition duration-300 ease-out flex flex-col justify-center items-center w-28 h-28 my-2 rounded-md shadow-gray-400 shadow-md border-gray-800
+}
+.test{
+    background-color: rgba(0, 0, 0, 0.341);
+}
+.dishes{   
+    @apply pb-3 md:max-w-14rem rounded hover:bg-gray-300  shadow-gray-600 hover:-translate-y-3 transition ease-out duration-500 break-words bg-white border-gray-300 shadow-md overflow-hidden my-2;
+
+    min-width: 10rem;
+}
+
+
+@media (min-width: 768px){
+    .mainPage{
+        display: grid;
+        grid-template-columns: repeat(5,minmax(0,1fr));
+    }
+}

@@ -1,0 +1,49 @@
+{
+  "result": 
+  [
+    {
+    "name":"Rendang",
+    "author":"Mama Aku",
+    "tags":["rendang","all"],
+    "image_url":"./images/rendang.jpg"
+
+  },
+  {
+    "name":"Semur Sapi",
+    "author":"Nenek Sarminah",
+    "tags":["semur","all"],
+    "image_url":""
+
+
+  },
+  {
+    "name":"Soto Betawi",
+    "author":"Po Jeje",
+    "tags":["soto","betawi","all"],
+    "image_url":""
+  },
+  {
+    "name":"Ayam Geprek",
+    "author":"Bang Jaja",
+    "tags":["ayam","pedas","all"],
+    "image_url":""
+  },
+  {
+    
+      "name":"Shrimp Skewers with Table Sauce",
+      "author":"Jonathan",
+      "tags":["seafood","shrimp","all"],
+      "image_url":"./images/shrimp.jpg"
+    
+  },
+  {
+    
+    "name":"Chinese Egg Noodles",
+    "author":"Lee",
+    "tags":["noodles","asian","chinese","all"],
+    "image_url":"./images/mie.jpg"
+  
+}
+
+]
+}
