@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { images } from "./images/images";
 function CardDisplay() {
   const location = useLocation();
@@ -23,7 +23,8 @@ console.log(data)
             {data?.map((data) => {
               return (
                 <>
-                  <div className="hover:bg-gray-300 shadow-gray-600 hover:-translate-y-3 transition ease-out duration-500 rounded bg-white border-gray-300 shadow-md overflow-hidden my-2 pb-4">
+                <Link to={"/detail/"+data.id}>
+                  <div className="sm:h-80 hover:bg-gray-300 shadow-gray-600 hover:-translate-y-3 transition ease-out duration-500 rounded bg-white border-gray-300 shadow-md overflow-hidden my-2 pb-4">
                     <img
                       className="h-40 sm:h-52 w-full object-cover "
                       src={data?.image_url ? require("" + data?.image_url) : ""}
@@ -39,6 +40,7 @@ console.log(data)
                 {}
               </div>
                   </div>
+                  </Link>
                 </>
               );
             })}

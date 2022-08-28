@@ -17,7 +17,7 @@
     background-color: rgba(0, 0, 0, 0.341);
 }
 .dishes{   
-    @apply pb-3 md:max-w-14rem rounded hover:bg-gray-300  shadow-gray-600 hover:-translate-y-3 transition ease-out duration-500 break-words bg-white border-gray-300 shadow-md overflow-hidden my-2;
+    @apply pb-3 sm:h-72 md:max-w-14rem rounded hover:bg-gray-300  shadow-gray-600 hover:-translate-y-3 transition ease-out duration-500 break-words bg-white border-gray-300 shadow-md overflow-hidden my-2;
 
     min-width: 10rem;
 }
