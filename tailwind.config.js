@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['node_modules/flowbite-react/',"./src/App.js","./src/components/Navbar/Navbar.js","./src/components/CardDisplay/CardDisplay.js","./src/components/HomePage/Home.js","./src/components/Footer/Footer.js","./src/components/Login/Login.js","./src/components/FoodDetail/Detail.js"],
+  content: ['node_modules/flowbite-react/',"./src/App.js","./src/components/Navbar/Navbar.js","./src/components/CardDisplay/CardDisplay.js","./src/components/HomePage/Home.js","./src/components/Footer/Footer.js","./src/components/Login/Login.js","./src/components/FoodDetail/Detail.js","./src/components/Form/Form.js"],
   theme: {
     extend: {
       fontFamily:{

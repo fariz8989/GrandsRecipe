@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "./images/images";
-const data = require('../../data.json')
 
 function Navbar() {
   const[currentUser,setUser]=useState({username:"",isLoggedIn:""})
@@ -28,10 +27,11 @@ function Navbar() {
     }
   }
   const search = async (keyword)=>{
-    const recipe = data.result
+    const recipe = await (await axios.get("http://localhost:4000/post")).data.data
+    console.log(recipe)
     const dataResult = []
     recipe.forEach(data=>{
-      const isIncludes =  data.tags.includes(keyword) || data.name.toLowerCase().includes(keyword)
+      const isIncludes =  data.tags.includes(keyword) || data.title.toLowerCase().includes(keyword)
       if(isIncludes){
         dataResult.push(data)
       }
@@ -85,15 +85,15 @@ function Navbar() {
             <form className="w-full mb-2 md:mb-0 md:w-96 mr-8">
               <label
                 for="default-search"
-                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
+                className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
               >
                 Search
               </label>
-              <div class="relative">
-                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+              <div className="relative">
+                <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <svg
                     aria-hidden="true"
-                    class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                    className="w-5 h-5 text-gray-500 dark:text-gray-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
