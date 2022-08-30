@@ -1,49 +1,65 @@
 {
-  "result": 
-  [
+  "result": [
     {
-    "name":"Rendang",
-    "author":"Mama Aku",
-    "tags":["rendang","all"],
-    "image_url":"./images/rendang.jpg"
-
-  },
-  {
-    "name":"Semur Sapi",
-    "author":"Nenek Sarminah",
-    "tags":["semur","all"],
-    "image_url":""
-
-
-  },
-  {
-    "name":"Soto Betawi",
-    "author":"Po Jeje",
-    "tags":["soto","betawi","all"],
-    "image_url":""
-  },
-  {
-    "name":"Ayam Geprek",
-    "author":"Bang Jaja",
-    "tags":["ayam","pedas","all"],
-    "image_url":""
-  },
-  {
-    
-      "name":"Shrimp Skewers with Table Sauce",
-      "author":"Jonathan",
-      "tags":["seafood","shrimp","all"],
-      "image_url":"./images/shrimp.jpg"
-    
-  },
-  {
-    
-    "name":"Chinese Egg Noodles",
-    "author":"Lee",
-    "tags":["noodles","asian","chinese","all"],
-    "image_url":"./images/mie.jpg"
-  
-}
-
-]
+      "id": 1,
+      "name": "Rendang",
+      "author": "Mama Aku",
+      "tags": ["rendang", "all"],
+      "image_url": "./images/rendang.jpg",
+      "rating":4.5,
+      "time":40,
+      "portion":4,
+      "ingredients": ["900gr of Meat","12 Shallots,Chopped","6 Garlics Cloves,Chopped","12 Large Red Chilis,Chopped","2 Tsp Chopped Ginger","2 Tbsp Chopped Galangal","Salt","4 Tsp Candlenut","2 Tbsp White Pepper","1 Tsp Cardamom","2 Tbsp Coriander","2 Tbsp Cumin","1/2 Tsp Nutmeg","+- 0.6cm Star Anise","1 Stalk Lemongrass","1/2 Cup Grapeseed Oil","1/2 Cup water","1L Coconut Cream","2 Tumeric Leaves","3 Leaves Kaffir Lime"]
+    },
+    {
+      "id": 2,
+      "name": "Semur Sapi",
+      "author": "Nenek Sarminah",
+      "tags": ["semur", "all"],
+      "rating":4.5,
+      "time":40,
+      "portion":2,
+      "image_url": "./images/semur.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Soto Betawi",
+      "author": "Po Jeje",
+      "rating":5,
+      "time": 60,
+      "portion":2,
+      "tags": ["soto", "betawi", "all"],
+      "image_url": "./images/soto.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Ayam Geprek",
+      "author": "Bang Jaja",
+      "rating":4.5,
+      "time": 45,
+      "portion":1,
+      "tags": ["ayam", "pedas", "all"],
+      "image_url": "./images/geprek.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Shrimp Skewers with Table Sauce",
+      "author": "Jonathan",
+      "tags": ["seafood", "shrimp", "all"],
+      "rating":4.5,
+      "time": 120,
+      "portion":"4-5",
+      "image_url": "./images/shrimp-skewers-with-sauce-table.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Chinese Egg Noodles",
+      "author": "Lee",
+      "tags": ["noodles", "asian", "chinese", "all"],
+      "rating":5,
+      "time": 25,
+      "portion":1,
+      "image_url": "./images/top-view-tasty-composition-noodles-table.jpg"
+    }
+  ]
 }
