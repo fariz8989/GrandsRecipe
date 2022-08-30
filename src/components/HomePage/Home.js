@@ -43,7 +43,7 @@ function Home(props) {
     if (status === false) {
       const token = sessionStorage.getItem("token");
       axios
-        .get("http://localhost:4000/users/login", {
+        .get("https://grandsbackend.herokuapp.com/users/login", {
           headers: { authorization: token },
         })
         .then((res) => {
@@ -58,7 +58,7 @@ function Home(props) {
   }, []);
   useEffect(() => {
     axios
-      .get("http://localhost:4000/post")
+      .get("https://grandsbackend.herokuapp.com/post")
       .then((res) => {
         setData(res.data.data);
       })
