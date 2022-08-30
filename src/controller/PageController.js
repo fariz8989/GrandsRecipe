@@ -8,6 +8,7 @@ import Detail from "../components/FoodDetail/Detail";
 import Form from "../components/Form/Form";
 import { Provider } from "react-redux";
 import store from "../redux"
+import Error from "../components/ErrorPage/Error";
 function HomePage(){
     
     return(<>
@@ -23,15 +24,19 @@ function HomePage(){
 function Result(){
     return(<>
     <div className="">
+    <Provider store={store}>
     <Navbar/>
     <CardDisplay/>
+    </Provider>
     </div>
     </>)
 }
 function PostPage(){
     return(<>
+    <Provider store={store}>
     <Navbar/>
     <Form/>
+    </Provider>
     </>)
 }
 function LoginPage(){
@@ -47,8 +52,15 @@ function RegisterPage(){
 }
 function DetailPage(){
     return(<>
+    <Provider store={store}>
     <Navbar/>
     <Detail/>
+    </Provider>
     </>)
 }
-export {Result,HomePage,LoginPage,RegisterPage,DetailPage,PostPage}
+function ErrorPage(){
+    return(<>
+    <Error/>
+    </>)
+}
+export {Result,HomePage,LoginPage,RegisterPage,DetailPage,PostPage,ErrorPage}

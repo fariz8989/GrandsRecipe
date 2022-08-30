@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useParams} from "react-router-dom";
-import {HomePage,Result,LoginPage,RegisterPage,DetailPage,PostPage} from '../controller/PageController'
+import {HomePage,Result,LoginPage,RegisterPage,DetailPage,PostPage,ErrorPage} from '../controller/PageController'
 
 function Router(){
     return(<>
@@ -13,6 +13,7 @@ function Router(){
           <Route path='/signup' element={<RegisterPage/>}/>
           <Route path="/detail/:id" element={<DetailPage/>}/>
           <Route path="/post" element={<PostPage/>}/>
+          <Route path="*" element={<ErrorPage/>}/>
         </Routes>
       </BrowserRouter>
     </>)
