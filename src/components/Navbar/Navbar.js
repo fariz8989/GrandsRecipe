@@ -152,7 +152,7 @@ function Navbar(props) {
                 {props.data?.status ? "Logout":"Sign Up"}
               </li>
             </Link>
-            <Link to="/login">
+            <Link to={props.data?.status ? "/profile":"/login"}>
               <li className="py-1 font-medium hover:text-gray-400 transition duration-400 ease-in md:mx-8 md:text-md">
               {props.data?.status ? props.data.username.toUpperCase():"Login"}
               </li>
