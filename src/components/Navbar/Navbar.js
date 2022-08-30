@@ -1,23 +1,29 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { getStatus } from "../../redux/action/action";
 import logo from "./images/images";
-
-function Navbar() {
+import {connect} from 'react-redux'
+function Navbar(props) {
   const[currentUser,setUser]=useState({username:"",isLoggedIn:""})
   useEffect(()=>{
-    const token = sessionStorage.getItem('token');
-    axios.get("http://localhost:4000/users/login",{
-      headers: { authorization: token },
-    }).then(res=>{
-      
-      setUser({username:res.data?.username,isLoggedIn:res.data?.isLoggedIn})
-      console.log(currentUser)
-    })
+    const status = props.data.status;
+    if(status === false){
+      const token = sessionStorage.getItem('token');
+      axios.get("http://localhost:4000/users/login",{
+        headers: { authorization: token },
+      }).then(res=>{
+        
+        props.setStatus({username:res.data?.username,isLoggedIn:res.data?.isLoggedIn})
+      })
+    }else{
+      console.log(status)
+    }
+    
   },[])
   const toggle = useRef();
   const navigate = useNavigate();
-  const[keyword,setKeyword]=useState('all')
+  const[keyword,setKeyword]=useState('')
   function dropDown() {
     const item = toggle.current;
     if (item.classList.contains("hidden")) {
@@ -31,6 +37,7 @@ function Navbar() {
     console.log(recipe)
     const dataResult = []
     recipe.forEach(data=>{
+      console.log(keyword)
       const isIncludes =  data.tags.includes(keyword) || data.title.toLowerCase().includes(keyword)
       if(isIncludes){
         dataResult.push(data)
@@ -40,8 +47,13 @@ function Navbar() {
   }
 
    async function handleSubmit(){
-    const result = await search(keyword.toLowerCase());
-    navigate('/result',{state:{result:result,keyword:keyword}});
+    if(!keyword){
+      alert("Please Fill Keyword Field")
+    }else{
+      const result = await search(keyword);
+      navigate('/result',{state:{result:result,keyword:keyword}});
+    }
+   
   }
   return (
     <>
@@ -135,14 +147,14 @@ function Navbar() {
                 About Us
               </li>
             </Link>
-            <Link onClick={currentUser?.isLoggedIn ? ()=> {sessionStorage.removeItem('token');window.location.reload()}:""}to={currentUser?.isLoggedIn ? "":"/signup"}>
+            <Link onClick={props.data?.status ? ()=> {sessionStorage.removeItem('token');window.location.reload()}:""}to={props.data?.status ? "":"/signup"}>
               <li className="py-1 font-medium hover:text-gray-400 transition duration-400 ease-in md:mx-8 md:text-md">
-                {currentUser?.isLoggedIn ? "Logout":"Sign Up"}
+                {props.data?.status ? "Logout":"Sign Up"}
               </li>
             </Link>
             <Link to="/login">
               <li className="py-1 font-medium hover:text-gray-400 transition duration-400 ease-in md:mx-8 md:text-md">
-              {currentUser?.isLoggedIn ? currentUser.username.toUpperCase():"Login"}
+              {props.data?.status ? props.data.username.toUpperCase():"Login"}
               </li>
             </Link>
           </ul>
@@ -151,4 +163,13 @@ function Navbar() {
     </>
   );
 }
-export default Navbar;
+const mapStateToProps = state =>({
+  data:state.userReducer
+})
+const mapDispatchToProps = dispatch =>({
+  getStatus: (value) => {
+      return dispatch(getStatus(value));
+  }
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(Navbar);

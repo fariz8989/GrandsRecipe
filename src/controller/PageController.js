@@ -6,10 +6,17 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Detail from "../components/FoodDetail/Detail";
 import Form from "../components/Form/Form";
+import { Provider } from "react-redux";
+import store from "../redux"
 function HomePage(){
+    
     return(<>
+    <Provider store={store}>
+       
     <Navbar/>
     <Home/>
+    </Provider>
+   
     
     </>)
 }

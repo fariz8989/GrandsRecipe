@@ -64,7 +64,7 @@ console.log(data)
                       </span>
                     </div>
                     <div className="flex gap-0.125 mx-4">
-                    {data?.rating ? rating(data?.rating):console.log('No reviews')}
+                    {data?.rating ? rating(data?.rating):<span className="text-gray-400 text-sm">{"No Review"}</span>}
               </div>
                   </div>
                   </Link>

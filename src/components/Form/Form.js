@@ -42,10 +42,7 @@ function Form() {
         console.log(err)
     }
   }
- function spliter(text){
-    const array =   text.split(",");
-    return array
-  }
+
   return (
     <>
     <div className="bg-gray-200 p-4">
@@ -94,7 +91,7 @@ function Form() {
             className="block w-full rounded-md bg-transparent focus:ring-0 focus:outline-none"
             type="text"
             onChange={(e)=>{
-                const value = spliter(e.target.value)
+                const value = e.target.value.toLowerCase()
                 setData({...data,tags:value})
             }}
           />
@@ -105,7 +102,7 @@ function Form() {
             placeholder="Seperate with coma ex:900gr of Sugar,100gr Tomato"
             className="block w-full h-full rounded-md bg-transparent focus:ring-0 focus:outline-none"
             onChange={(e)=>{
-                const value = spliter(e.target.value)
+                const value = e.target.value
                 setData({...data,ingredients:value})
             }}
           ></textarea>
@@ -116,7 +113,7 @@ function Form() {
             placeholder="Seperate with coma ex:900gr of Sugar,100gr Tomato"
             className="block w-full h-full rounded-md bg-transparent focus:ring-0 focus:outline-none"
             onChange={(e)=>{
-                const value = spliter(e.target.value)
+                const value = e.target.value
                 setData({...data,steps:value})
             }}
           ></textarea>
