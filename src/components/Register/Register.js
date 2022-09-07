@@ -12,7 +12,7 @@ function Register() {
     if(username===""||password===""){
       errContainer.innerHTML = "Username or Password require"
     }else{
-      axios.post("http://localhost:4000/users/register",{username,password}).then(res=>{
+      axios.post("https://grandsbackend.herokuapp.com/users/register",{username,password}).then(res=>{
        navigate('/login')
       }).catch(err=>{
         const message = err.response.data.message

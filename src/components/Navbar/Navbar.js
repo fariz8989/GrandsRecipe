@@ -33,7 +33,7 @@ function Navbar(props) {
     }
   }
   const search = async (keyword)=>{
-    const recipe = await (await axios.get("http://localhost:4000/post")).data.data
+    const recipe = await (await axios.get("https://grandsbackend.herokuapp.com/post")).data.data
     console.log(recipe)
     const dataResult = []
     recipe.forEach(data=>{
@@ -167,7 +167,7 @@ const mapStateToProps = state =>({
   data:state.userReducer
 })
 const mapDispatchToProps = dispatch =>({
-  getStatus: (value) => {
+  setStatus: (value) => {
       return dispatch(getStatus(value));
   }
 })

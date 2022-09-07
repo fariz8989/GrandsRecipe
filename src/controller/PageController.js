@@ -9,6 +9,7 @@ import Form from "../components/Form/Form";
 import { Provider } from "react-redux";
 import store from "../redux"
 import Error from "../components/ErrorPage/Error";
+import About from "../components/About/About";
 function HomePage(){
     
     return(<>
@@ -63,4 +64,13 @@ function ErrorPage(){
     <Error/>
     </>)
 }
-export {Result,HomePage,LoginPage,RegisterPage,DetailPage,PostPage,ErrorPage}
+function AboutPage(){
+    return(<>
+    <Provider store={store}>
+     <Navbar/>
+    <About/> 
+    </Provider>
+    </>)
+   
+}
+export {Result,HomePage,LoginPage,RegisterPage,DetailPage,PostPage,ErrorPage,AboutPage};

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { image } from "./images/images";
+
 
 function Detail() {
   const { id } = useParams();
@@ -39,7 +39,7 @@ function Detail() {
   }
 
   function getData() {
-    axios.get("http://localhost:4000/post").then((res) => {
+    axios.get("https://grandsbackend.herokuapp.com/post").then((res) => {
       const array = res.data.data;
       const filtered = array.filter((data) => {
         return data.id === parseInt(id);
@@ -112,7 +112,7 @@ function Detail() {
                   </span>
                 </div>
               </div>
-              <div className="mt-4 grid grid-cols-4">
+              <div className="mt-4 grid grid-cols-4 gap-y-4">
                 <div>
                   <h1 className="font-bold text-gray-500 text-2xl uppercase">
                     Ingredients
@@ -126,6 +126,30 @@ function Detail() {
                     );
                   })}
                 </div>
+                <div className=" col-start-3">
+                  <h1 className="font-bold text-gray-500 text-2xl uppercase">
+                    Steps
+                  </h1>
+
+                  {recipe?.steps.slice(0,8).map((data) => {
+                    return (
+                      <h1 className="font-semibold text-gray-800 text-md">
+                        {"- " + data}
+                      </h1>
+                    );
+                  })}
+                </div>
+                <div className=" col-start-4">
+
+                  {recipe?.steps.slice(9,(recipe.steps.length -1)).map((data) => {
+                    return (
+                      <h1 className="font-semibold text-gray-800 text-md">
+                        {"- " + data}
+                      </h1>
+                    );
+                  })}
+                </div>
+                
               </div>
             </>
           );

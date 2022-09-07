@@ -43,7 +43,7 @@ function Home(props) {
     if (status === false) {
       const token = sessionStorage.getItem("token");
       axios
-        .get("http://localhost:4000/users/login", {
+        .get("https://grandsbackend.herokuapp.com/users/login", {
           headers: { authorization: token },
         })
         .then((res) => {
@@ -58,7 +58,7 @@ function Home(props) {
   }, []);
   useEffect(() => {
     axios
-      .get("http://localhost:4000/post")
+      .get("https://grandsbackend.herokuapp.com/post")
       .then((res) => {
         setData(res.data.data);
       })
@@ -135,7 +135,7 @@ function Home(props) {
             </div>
           </div>
           <h3 className="text-xl font-bold text-gray-800">Popular Dishes</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 sm:gap-2 gap-y-1.5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 sm:gap-2 gap-y">
             {/*Dishes Card*/}
 
             {data[0] ? (
