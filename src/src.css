@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 .background-pic{
-    background-image: url('./components//HomePage//images//bg.jpg');
+    background-image: url('./components//HomePage//images//bg.webp');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

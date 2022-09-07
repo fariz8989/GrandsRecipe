@@ -10,7 +10,7 @@ function Navbar(props) {
     const status = props.data.status;
     if(status === false){
       const token = sessionStorage.getItem('token');
-      axios.get("http://localhost:4000/users/login",{
+      axios.get("https://grandsbackend.herokuapp.com/users/login",{
         headers: { authorization: token },
       }).then(res=>{
         
