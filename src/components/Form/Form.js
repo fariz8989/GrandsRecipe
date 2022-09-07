@@ -29,7 +29,7 @@ function Form() {
             formData.append("steps",data.steps);
             formData.append("file",data.image)
             console.log(typeof formData.get("steps"))
-            axios.put("http://localhost:4000/post/create",formData,{headers:{Authorization:token}})
+            axios.put("https://grandsbackend.herokuapp.com/post/create",formData,{headers:{Authorization:token}})
             .then(res=>{
                 alert("Post Berhasil")
                 navigate("/")

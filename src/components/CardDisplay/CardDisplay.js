@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { images } from "./images/images";
 function CardDisplay() {
   const location = useLocation();
   const data = location.state?.result;

@@ -135,7 +135,7 @@ function Home(props) {
             </div>
           </div>
           <h3 className="text-xl font-bold text-gray-800">Popular Dishes</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 sm:gap-2 gap-y-1.5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 sm:gap-2 gap-y">
             {/*Dishes Card*/}
 
             {data[0] ? (

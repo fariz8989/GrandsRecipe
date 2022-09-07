@@ -10,7 +10,7 @@ module.exports = {
         'misty':'#E6EBEF'
       },
       maxWidth:{
-        '14rem':'14rem'
+        '14rem':'14.25rem'
       },
       minWidth:{
         '5.5rem':'5.5rem'
