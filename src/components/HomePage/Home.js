@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Button from "../PostButton/PostButton";
 import { getStatus } from "../../redux/action/action";
@@ -8,6 +8,28 @@ import { connect } from "react-redux";
 //const data = require("../../data.json").result
 function Home(props) {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
+  const search = async (keyword)=>{
+    const recipe = await (await axios.get("https://grandsbackend.herokuapp.com/post")).data.data
+    const dataResult = []
+    recipe.forEach(data=>{
+      const isIncludes =  data.tags.includes(keyword.toLowerCase()) || data.title.toLowerCase().includes(keyword)
+      if(isIncludes){
+        dataResult.push(data)
+      }
+    })
+    return dataResult
+  }
+
+   async function handleSubmit(keyword){
+    if(!keyword){
+      alert("Please Fill Keyword Field")
+    }else{
+      const result = await search(keyword);
+      navigate('/result',{state:{result:result,keyword:keyword}});
+    }
+   
+  }
   function rating(data) {
     const rating = [];
     for (let index = data; index > 0; index--) {
@@ -91,7 +113,9 @@ function Home(props) {
             Popular Categories
           </h3>
           <div className="flex justify-start gap-4 md:gap-6 overflow-x-visible relative whitespace-nowrap overflow-y-hidden">
-            <div className="categories">
+            <div onClick={()=>{
+              handleSubmit('Spicy')
+            }} className="categories">
               <svg
                 className="w-2/5 h-2/5 fill-gray-600 mb-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +125,11 @@ function Home(props) {
               </svg>
               <span className="text-gray-400 font-semibold text-md">Spicy</span>
             </div>
-            <div className="categories">
+            <div 
+            onClick={()=>{
+              handleSubmit('Local')
+            }}
+            className="categories">
               <svg
                 className="w-2/5 h-2/5 fill-gray-600 mb-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +139,12 @@ function Home(props) {
               </svg>
               <span className="text-gray-400 font-semibold text-md">Local</span>
             </div>
-            <div className="categories">
+            
+            <div 
+            onClick={()=>{
+              handleSubmit('Dessert')
+            }}
+            className="categories">
               <svg
                 className="w-2/5 h-2/5 fill-gray-600 mb-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +156,11 @@ function Home(props) {
                 Dessert
               </span>
             </div>
-            <div className="categories">
+            <div 
+            onClick={()=>{
+              handleSubmit('Vegie')
+            }}
+            className="categories">
               <svg
                 className="w-2/5 h-2/5 fill-gray-600 mb-2"
                 xmlns="http://www.w3.org/2000/svg"
