@@ -34,11 +34,9 @@ function Navbar(props) {
   }
   const search = async (keyword)=>{
     const recipe = await (await axios.get("https://grandsbackend.herokuapp.com/post")).data.data
-    console.log(recipe)
     const dataResult = []
     recipe.forEach(data=>{
-      console.log(keyword)
-      const isIncludes =  data.tags.includes(keyword) || data.title.toLowerCase().includes(keyword)
+      const isIncludes =  data.tags.includes(keyword.toLowerCase()) || data.title.toLowerCase().includes(keyword)
       if(isIncludes){
         dataResult.push(data)
       }
