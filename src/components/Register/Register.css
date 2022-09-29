@@ -2,7 +2,7 @@
     height: 80vh;
 }
 .login-form{
-  @apply w-4/5 flex justify-center flex-col login-container p-8 items-center;
+  @apply w-full flex justify-center flex-col login-container p-8 items-center;
   background-color: rgba(255, 255, 255, 0.572);
 }
 .input{
@@ -45,11 +45,21 @@
 }
 .grid-register{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-     background-image: url('./fresh-colourful-ingredients-mexican-cuisine.jpg');
+    grid-template-columns: 1fr;
+}
+@media (min-width:640px) {
+    .grid-register{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('./fresh-colourful-ingredients-mexican-cuisine.jpg');
+    }
+    .login-form{
+        @apply w-4/5;
+        background-color: rgba(255, 255, 255, 0.572);
+      }
 }
 .inputBox span{
     position: absolute;

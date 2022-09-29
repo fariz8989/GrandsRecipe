@@ -2,7 +2,7 @@
     height: 80vh;
 }
 .login-form{
-  @apply w-4/5 flex justify-center flex-col login-container p-8 items-center;
+  @apply w-full flex justify-center flex-col login-container p-8 items-center;
   background-color: rgba(255, 255, 255, 0.572);
 }
 .input{
@@ -45,11 +45,21 @@
 }
 .grid-login{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-     background-image: url('./delicious-healthy-asian-food-gray-textured-background-with-copy-space.jpg');
+    grid-template-columns: 1fr;
+}
+@media (min-width:640px) {
+    .grid-login{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+         background-image: url('./delicious-healthy-asian-food-gray-textured-background-with-copy-space.jpg');
+    }
+    .login-form{
+        @apply w-4/5;
+        background-color: rgba(255, 255, 255, 0.572);
+      }
 }
 .inputBox span{
     position: absolute;
